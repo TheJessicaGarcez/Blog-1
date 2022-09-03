@@ -1,56 +1,65 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog-1</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-
-<body>
-    <header>
-        <!-- Top Navigation Menu -->
-        <div class="topnav">
-            <a href="#home" class="active"><img src="/assets/img/logo.png" alt="logo do blog" id="logo"></a>
-            <!-- Navigation links (hidden by default) -->
-            <div id="myLinks">
-                <a href="#news">News</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>
-            </div>
-
-            <div class="container">
-                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-                <a href="javascript:void(0);">
-                    <input type="checkbox" id="checkbox-menu" onclick="myFunction()">
-                    <label for="checkbox-menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </label>
-                </a>
-            </div>
-
-        </div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Blog</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="#"><img src="/assets/img/logo.png" alt="logo do blog" id="logo"></a>
+      <div class="topnav">
+        <div class="menu-topnav"></div>
+      </div>
+      <ul class="menu-items">
+        <li><a href="#" class="menu-item">HOME</a></li>
+        <li><a href="#" class="menu-item">NEWS</a></li>
+        <li><a href="#" class="menu-item">CONTACTS</a></li>
+        <li><a href="#" class="menu-item">ABOUT US</a></li>
+      </ul>
     </header>
-    <section class="content">
-        <div class="content" id="img-background">
-
-        </div>
-        <div class="content" id="text-1">
-
-        </div>
-        <div class="content" id="button">
-
-        </div>
+    <section class="section about-us">
+      <div class="hero-col">
+        <h1>FIRST SECTION</h1>
+        <h2>SOMETHING</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
+          reiciendis totam modi repellat maxime, itaque nulla repudiandae dicta
+          molestiae, nam aliquam consequatur a possimus quas ipsam alias vitae
+          neque laboriosam?
+        </p>
+      </div>
+      <div class="hero-col hero-img">
+        <img src="/assets/img/background.jpg" alt="social image"/>
+      </div>
+      <div class="custom-shape-divider">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+        <!-- ISSO AQUI ADICIONA AQUELA ONDA NA DIVISAO DAS SESSOES -->
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
     </section>
-    <section class="">
-
+    <section class="section another-section">
+      <div class="another-col">
+        <h1>Section</h1>
+        <h2>Another Awesome</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
+          reiciendis totam modi repellat maxime, itaque nulla repudiandae dicta
+          molestiae, nam aliquam consequatur a possimus quas ipsam alias vitae
+          neque laboriosam?
+        </p>
+      </div>
     </section>
-</body>
-<script src="/assets/js/index.js"></script>
-
+    <script src="assets/js/index.js" defer></script>
+  </body>
 </html>

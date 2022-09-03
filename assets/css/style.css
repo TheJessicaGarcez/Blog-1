@@ -1,100 +1,238 @@
+/* GLOBALS */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Titillium+Web:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+body {
+  font-family: Monterrat, sans-serif;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  z-index: 1;
+  backdrop-filter: blur(2px);
+}
+
+.header a {
+  text-decoration: none;
+  color: #111111;
+  font-size: 2rem;
 }
 
 #logo {
-    width: 5em;
-    height: 4em;
+  width: 4em;
+  height: 4em;
 }
 
-/* Style the navigation menu */
+.menu-items {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu-items li a {
+  font-size: 1rem;
+  font-weight: 550;
+  padding: 0.5em 1em;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.menu-items li a:hover {
+  background-color: #200a3f59;
+}
+
+/* TOPNAV */
 .topnav {
-    overflow: hidden;
-    background-color: #333;
-    position: relative;
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menu-topnav,
+.menu-topnav::before,
+.menu-topnav::after {
+  width: 1.5rem;
+  height: 0.1rem;
+  background-color: #111111;
+  transition: all 0.5s ease-in-out;
+}
+.menu-topnav::before,
+.menu-topnav::after {
+  content: "";
+  position: absolute;
+}
+.menu-topnav::before {
+  transform: translateY(-0.5rem);
+}
+.menu-topnav::after {
+  transform: translateY(0.5rem);
+}
+/* animation */
+.topnav.open .menu-topnav {
+  transform: translateX(2rem);
+  background-color: transparent;
+}
+.topnav.open .menu-topnav::before {
+  transform: rotate(45deg) translate(-1.5rem, 1.5rem);
+  background-color: #697081;
+}
+.topnav.open .menu-topnav::after {
+  transform: rotate(-45deg) translate(-1.5rem, -1.5rem);
+  background-color: #697081;
+}
+
+/* sections */
+.section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ABOUT US */
+.about-us {
+  background-image: url("/assets/img/background.jfif");
+}
+
+.hero-col {
+  padding: clamp(1rem, 8vw, 5rem);
+  max-width: 50%;
+}
+
+.section h1 {
+  font-family: "Titillium Web", serif;
+  font-size: clamp(60px, 8vw, 100px);
+  font-weight: 700;
+  line-height: 3vw;
+  color: #black;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.section h2 {
+  font-size: clamp(18px, 2.5vw, 60px);
+  color: #black;
+  padding-left: 4rem;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.section p {
+  color: #black;
+  padding-right: 1rem;
+  font-family: 'Comfortaa', cursive;
+  opacity: 0.5;
+}
+
+.about-us img {
+  width: clamp(250px, 30vw, 500px);
+  transform: scaleX(-1);
+}
+
+/* DIVISA DAS SESSOES (ONDA) */
+.custom-shape-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.custom-shape-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+/* Deixa a onda que divide as sessoes da mesma cor do background color */
+.custom-shape-divider .shape-fill {
+  fill: #ffffff;
+}
+
+/* continuacao da onda */
+.another-col {
+  width: clamp(300px, 50vw, 600px);
+}
+
+/* media query for tablet devices */
+@media (max-width: 1023px) {
+  .custom-shape-divider svg {
+    width: calc(200% + 1.3px);
+    height: 150px;
   }
-  
-  /* Hide the links inside the navigation menu (except for logo/home) */
-  .topnav #myLinks {
+  .hero-col {
+    max-width: 100%;
+    width: clamp(300px, 50vw, 600px);
+    padding: 0;
+  }
+  .hero-img {
     display: none;
   }
-  
-  /* Style navigation menu links */
-  .topnav a {
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-  }
-  
-  /* Style the active link (or home/logo) */
-  .active {
-    background-color: #04AA6D;
-    color: white;
-  }
-  
-  .container {
-    height: 100%;
-    display: block;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
+}
 
-  #checkbox-menu {
+/* media query for mobile devices */
+@media (max-width: 767px) {
+  .custom-shape-divider svg {
+    width: calc(250% + 1.3px);
+    height: 150px;
+  }
+  .header a {
+    font-size: 1.5rem;
+  }
+  .topnav {
+    display: flex;
+  }
+  .menu-items {
+    flex-direction: column;
+    justify-content: space-around;
     position: absolute;
-    opacity: 0;
-  }
-  
-  label {
-    cursor: pointer;
-    position: relative;
-    display: block;
-    height: 22px;
-    width: 30px;
-  }
-  
-  label span {
-    position: absolute;
-    display: block;
-    height: 5px;
-    width: 100%;
-    border-radius: 30px;
-    background: #f16234;
-    transition: 0.25s ease-in-out;
-  }
-  
-  label span:nth-child(1) {
     top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(100vw);
+    background-color: rgb(32, 126, 163);
+    opacity: 0.4;
+    transition: transform 0.3s ease-in-out;
   }
-  
-  label span:nth-child(2) {
-    top: 8px;
+  .menu-items.open {
+    transform: translateX(0);
   }
-  
-  label span:nth-child(3) {
-    top: 16px;
+  .menu-items li {
+    width: 100vw;
+    height: 100%;
   }
-  
-  #checkbox-menu:checked + label span:nth-child(1) {
-    transform: rotate(-45deg);
-    top: 8px;
+  .menu-items li a {
+    color: #ffffff;
+    font-size: 3vh;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
   }
-  
-  #checkbox-menu:checked + label span:nth-child(2) {
-    opacity: 0;
+  .menu-items li a:hover {
+    color: #000000;
   }
-  
-  #checkbox-menu:checked + label span:nth-child(3) {
-    transform: rotate(45deg);
-    top:8px;
-  }
+}
